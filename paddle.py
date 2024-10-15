@@ -1,16 +1,16 @@
 from turtle import Turtle
 
 class Paddle(Turtle):
-    def __init__(self, side):
+    def __init__(self, position):
         super().__init__()
-        self.paddle_setup(side)
+        self.paddle_setup(position)
 
-    def paddle_setup(self, side):
+    def paddle_setup(self, position):
         self.shape("square")
         self.shapesize(stretch_wid=5, stretch_len=1)
         self.color("white")
         self.penup()
-        self.goto(350, 0) if side == "right" else self.goto(-350, 0)
+        self.goto(position)
 
     def go_up(self):
         new_y = self.ycor() + 20
